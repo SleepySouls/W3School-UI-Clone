@@ -58,12 +58,30 @@ export default function Home() {
               In-depth tutorials covering HTML, CSS, and JavaScript for beginners and advanced users alike.
             </CardContent>
           </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Code className="mr-2 h-5 w-5" />
+                Multi-language Code Compiler
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              Write and run HTML, CSS, and JavaScript code directly in your browser with our built-in code compiler.
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       <section>
         <h2 className="text-3xl font-bold mb-6 text-center">Try it Yourself</h2>
-        <TryItYourself />
+        <div className="space-y-4">
+          <TryItYourself />
+          <div className="text-center">
+            <Button asChild>
+              <Link href="/code-compiler">Try Multi-language Code Compiler</Link>
+            </Button>
+          </div>
+        </div>
       </section>
     </div>
   )
