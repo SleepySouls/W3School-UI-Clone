@@ -10,7 +10,7 @@ export default function Home() {
       <section className="text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">Welcome to UIT W3Clone</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          An enhanced clone of the W3Schools website layout, created using Next.js and shadcn/ui components.
+          An enhanced clone of the W3Schools website layout.
         </p>
         <div className="flex justify-center gap-4">
           <Button asChild>
