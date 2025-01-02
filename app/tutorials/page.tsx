@@ -30,6 +30,18 @@ export default function TutorialsPage() {
             { title: "Introduction to HTML", href: "/html/intro" },
             { title: "HTML Elements", href: "/html/elements" },
             { title: "HTML Attributes", href: "/html/attributes" },
+            { title: "HTML Basic", href: "/html/basic" },
+            { title: "HTML Formatting", href: "/html/formatting" },
+            { title: "HTML Quotations", href: "/html/quotations" },
+            { title: "HTML Comments", href: "/html/comments" },
+            { title: "HTML Colors", href: "/html/colors" },
+            { title: "HTML CSS", href: "/html/css" },
+            { title: "HTML Favicon", href: "/html/favicon" },
+            { title: "HTML Page Title", href: "/html/page-title" },
+            { title: "HTML Tables", href: "/html/tables" },
+            { title: "HTML Lists", href: "/html/lists" },
+            { title: "HTML Block & Inline", href: "/html/block-inline" },
+            { title: "HTML Div", href: "/html/div" },
           ]}
           badge="Structure"
         />
