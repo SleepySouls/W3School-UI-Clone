@@ -15,7 +15,7 @@ jobs:
 
     env:
       docker_username: ${{secrets.DOCKERHUB.USERNAME}}
-      docker_password: ${{secrets.DOCKERHUB.PASSWORD}}
+      docker_password: ${{secrets.DOCKERHUB.TOKEN}}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
