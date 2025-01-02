@@ -65,7 +65,9 @@ export function Header() {
             <>
               {user ? (
                 <div className="flex items-center space-x-4">
-                  <span className="text-sm">Hello, {user.displayName || 'User'}</span>
+                  <Link href="/user/profile" className="text-sm">
+                    Hello, {user.displayName || 'User'}
+                  </Link>
                   <Button variant="outline" size="sm" onClick={handleSignOut}>
                     Sign Out
                   </Button>
