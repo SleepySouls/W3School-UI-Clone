@@ -27,6 +27,6 @@ jobs:
     - name: build and push Docker Image
       uses: docker/build-push-action@v5
       with:
-        context: Dockerfile
+        context: .
         push: true
         tags: liberosis8803/w3schoolclone
