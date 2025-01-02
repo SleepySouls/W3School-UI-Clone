@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAuth } from '@/contexts/auth-context'
 import { updateProfile } from 'firebase/auth'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -10,6 +10,70 @@ import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Pencil, Check, X } from 'lucide-react'
+import { database } from '@/lib/firebase'
+import { ref, get } from 'firebase/database'
+
+interface CourseRegistration {
+  courseId: string
+  courseName: string
+  registeredAt: string
+}
+
+function RegisteredCourses() {
+  const { user } = useAuth()
+  const [courses, setCourses] = useState<CourseRegistration[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchRegisteredCourses = async () => {
+      if (!user) return
+
+      try {
+        const registrationsRef = ref(database, `courseRegistrations/${user.uid}`)
+        const snapshot = await get(registrationsRef)
+        
+        if (snapshot.exists()) {
+          const registrations = Object.values(snapshot.val()) as CourseRegistration[]
+          setCourses(registrations)
+        }
+      } catch (err) {
+        console.error('Error fetching registered courses:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchRegisteredCourses()
+  }, [user])
+
+  if (loading) return <div>Loading courses...</div>
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Registered Courses</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {courses.length === 0 ? (
+          <p className="text-muted-foreground">No courses registered yet.</p>
+        ) : (
+          <div className="space-y-4">
+            {courses.map((course) => (
+              <Card key={course.courseId}>
+                <CardContent className="p-4">
+                  <div className="font-medium">{course.courseName}</div>
+                  <div className="text-sm text-muted-foreground">
+                    Registered on: {new Date(course.registeredAt).toLocaleDateString()}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
 
 export default function UserProfilePage() {
   const { user } = useAuth()
@@ -58,7 +122,7 @@ export default function UserProfilePage() {
     : 'Unknown'
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle className="flex justify-between items-center">
@@ -136,6 +200,7 @@ export default function UserProfilePage() {
           </div>
         </CardContent>
       </Card>
+      <RegisteredCourses />
     </div>
   )
 } 

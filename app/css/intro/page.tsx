@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Paintbrush, Code, Layout } from 'lucide-react'
+import { CourseRegistration } from "@/components/course-registration"
 
 export default function CSSIntroPage() {
   return (
@@ -10,6 +11,10 @@ export default function CSSIntroPage() {
         <p className="text-xl text-muted-foreground">
           CSS (Cascading Style Sheets) is the language we use to style an HTML document. It describes how HTML elements should be displayed.
         </p>
+        <CourseRegistration 
+          courseId="css-course" 
+          courseName="Introduction to CSS" 
+        />
       </div>
       
       <section className="space-y-6">
