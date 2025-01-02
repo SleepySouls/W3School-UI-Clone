@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { LessonNavigation } from "@/components/lesson-navigation"
 
 export default function HTMLBasicPage() {
   return (
@@ -9,6 +10,14 @@ export default function HTMLBasicPage() {
           Learn the basics of HTML, the standard markup language for creating web pages.
         </p>
       </section>
+
+      {/* LessonNavigation Component */}
+      <LessonNavigation 
+        courseId="html-course" 
+        currentLesson="html-basic" 
+        prevLesson="/html/elements" 
+        nextLesson="/html/attributes" 
+      />
     </div>
   )
-} 
+}

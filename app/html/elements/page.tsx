@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileCode2, Layout, Type, List } from 'lucide-react'
+import { LessonNavigation } from "@/components/lesson-navigation"
 
 export default function HTMLElementsPage() {
   return (
@@ -102,7 +103,14 @@ export default function HTMLElementsPage() {
       <p className="text-lg text-muted-foreground text-center mt-12">
         These are just a few of the many HTML elements available. As you continue learning HTML, you'll discover more elements and how to use them effectively in your web pages.
       </p>
+
+      {/* LessonNavigation Component */}
+      <LessonNavigation 
+        courseId="html-course" 
+        currentLesson="html-elements" 
+        prevLesson="/html/intro" 
+        nextLesson="/html/attributes" 
+      />
     </div>
   )
 }
-
