@@ -31,5 +31,7 @@ jobs:
       env:
         FIREBASE_TOKEN: "${{ secrets.FIREBASE_TOKEN }}"
       run: |
-        docker buildx build --build-arg FIREBASE_TOKEN=${{secrets.FIREBASE_TOKEN}} --tag liberosis8803/w3schoolclone .
+        docker buildx build --build-arg FIREBASE_TOKEN=${FIREBASE_TOKEN} \
+        --tag liberosis8803/w3schoolclone:latest \
+        .
         docker push liberosis8803/w3schoolclone
