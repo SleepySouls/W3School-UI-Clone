@@ -33,4 +33,4 @@ jobs:
         push: true
         tags: liberosis8803/w3schoolclone
         build-args: |
-          FIREBASE_TOKEN=$(secrets.FIREBASE_TOKEN)
+          FIREBASE_TOKEN=${{secrets.FIREBASE_TOKEN}}
