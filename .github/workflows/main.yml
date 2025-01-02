@@ -26,5 +26,5 @@ jobs:
 
     - name: build and push Docker Image
       run: |
-        docker build --build-arg FIREBASE_TOKEN=${{secrets.FIREBASE_TOKEN}} -t liberosis8803/w3schoolclone .
+        docker buildx build --build-arg FIREBASE_TOKEN=${{secrets.FIREBASE_TOKEN}} --tag liberosis8803/w3schoolclone .
         docker push liberosis8803/w3schoolclone
