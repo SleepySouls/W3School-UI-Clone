@@ -1,1 +1,1 @@
-W3School Web UI Clone using NextJS
+W3SchoolClone using NextJS and Firebase
