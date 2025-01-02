@@ -1,0 +1,43 @@
+name: 'Build and Publish Docker Image to Dockerhub'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  Dockerhub:
+    name: 'Dockerhub environment variables'
+    runs-on: ubuntu-latest
+
+    env:
+      docker_username: ${{secrets.DOCKERHUB.USERNAME}}
+      docker_password: ${{secrets.DOCKERHUB.TOKEN}}
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v4
+
+
+    # Run Checkov for Securit Scans
+    - name: Login Dockerhub
+      uses: docker/login-action@v3
+      with:
+        username: docker_username
+        password: docker_password
+
+    - name: build and push Docker Image
+      uses: docker/build-push-action@v5
+      with:
+        context: Dockerfile
+        push: true
+        tags: liberosis8803/w3schoolclone
