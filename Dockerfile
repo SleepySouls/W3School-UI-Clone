@@ -4,6 +4,10 @@ WORKDIR /app
 
 COPY . .
 
+ARG FIREBASE_TOKEN
+
+RUN echo "${FIREBASE_TOKEN}" > .env.local
+
 RUN npm install
 
 EXPOSE 3000
