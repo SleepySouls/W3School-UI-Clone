@@ -1,10 +1,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileCode2, Layout, Type } from 'lucide-react'
+import { CourseRegistration } from "@/components/course-registration"
 
 export default function HTMLIntroPage() {
   return (
-    <div className="space-y-12">
+    <div className="container mx-auto py-10 space-y-10">
+      <div className="space-y-4">
+        <h1 className="text-4xl font-bold">Introduction to HTML</h1>
+        <p className="text-xl text-muted-foreground">
+          HTML is the standard markup language for creating Web pages.
+        </p>
+        <CourseRegistration 
+          courseId="html-course" 
+          courseName="Introduction to HTML" 
+        />
+      </div>
       <section className="text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">Introduction to HTML</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

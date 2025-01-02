@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Code, Globe, Server, Zap } from 'lucide-react'
+import { CourseRegistration } from "@/components/course-registration"
 
 export default function JavaScriptIntroPage() {
   return (
@@ -10,6 +11,10 @@ export default function JavaScriptIntroPage() {
         <p className="text-xl text-muted-foreground">
           JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It's a language that is dynamic, weakly typed, prototype-based and multi-paradigm.
         </p>
+        <CourseRegistration 
+          courseId="javascript-course" 
+          courseName="Introduction to JavaScript" 
+        />
       </div>
       
       <section className="space-y-6">
