@@ -6,9 +6,9 @@ COPY . .
 
 ARG FIREBASE_TOKEN
 
-RUN echo $FIREBASE_TOKEN
+RUN echo "${FIREBASE_TOKEN}" >> .env.local
 
-RUN echo "${FIREBASE_TOKEN}" > .env.local
+RUN cat .env.local
 
 RUN npm install
 
