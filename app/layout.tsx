@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider"
 import { Header } from '@/components/ui/header'
 import { Sidebar } from '@/components/ui/sidebar'
 import { Footer } from '@/components/ui/footer'
+import { AuthProvider } from '@/contexts/auth-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,18 +27,20 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <div className="flex flex-1">
-              <Sidebar />
-              <main className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900">
-                <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                  {children}
-                </div>
-              </main>
+          <AuthProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <div className="flex flex-1">
+                <Sidebar />
+                <main className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900">
+                  <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+                    {children}
+                  </div>
+                </main>
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
