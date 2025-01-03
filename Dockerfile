@@ -6,7 +6,7 @@ COPY . .
 
 ARG FIREBASE_TOKEN
 
-RUN echo "${FIREBASE_TOKEN}" >> .env.local
+RUN printf "%s\n" "${FIREBASE_TOKEN}" >> .env.local
 
 RUN cat .env.local
 
