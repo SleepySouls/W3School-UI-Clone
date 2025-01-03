@@ -9,8 +9,8 @@ import { AuthProvider } from '@/contexts/auth-context'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'UIT W3Clone',
-  description: 'An enhanced clone of the W3Schools website layout',
+  title: 'UIT StudyHub',
+  description: 'A website for UIT students to learn and practice programming languages',
 }
 
 export default function RootLayout({

@@ -1,1 +1,1 @@
-W3School Web UI Clone using NextJS
+UIT StudyHub using NextJS

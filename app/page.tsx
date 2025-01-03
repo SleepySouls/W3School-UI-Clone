@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div className="space-y-12">
       <section className="text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">Welcome to UIT W3Clone</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">Welcome to UIT StudyHub </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          An enhanced clone of the W3Schools website layout.
+          An website for UIT students to learn and practice programming languages.
         </p>
         <div className="flex justify-center gap-4">
           <Button asChild>
